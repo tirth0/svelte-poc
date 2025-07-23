@@ -1,0 +1,72 @@
+.call {
+  flex: 1;
+  align-self: stretch;
+
+  background-color: #ffffff;
+
+  display: grid;
+  gap: 16px;
+  grid-template-rows: 1fr 1fr 0.5fr;
+  padding: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+
+    > p {
+      color: #394759;
+      text-align: center;
+
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: no-repeat center / 24px;
+        cursor: pointer;
+      }
+
+      .mic {
+        border: 1px solid var(--blue);
+        background-color: rgba(78, 110, 193, 0.08);
+        background-image: url("/img/mic.svg");
+        backdrop-filter: blur(20px);
+
+        &.muted {
+          background-image: url("/img/mic-muted.svg");
+        }
+      }
+
+      .end {
+        border: 1px solid #ff6b6b;
+        background-color: rgba(255, 107, 107, 0.08);
+        background-image: url("/img/end-call.svg");
+      }
+
+      .start {
+        border: 1px solid #26b85d;
+        background-color: rgba(42, 209, 105, 0.08);
+        width: fit-content;
+        padding: 16px;
+        color: #26b85d;
+      }
+    }
+  }
+}
