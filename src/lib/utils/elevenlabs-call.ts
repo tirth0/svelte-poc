@@ -85,12 +85,12 @@ export function elevenlabsCall(): ElevenlabsCallModule {
       let token = localStorage.getItem("token");
       if (!token) {
         // Prompt for token if not found (browser API)
-        const updatedToken = prompt("Enter ElevenLabs API token:");
+        const updatedToken = prompt("Enter Empower token:");
         if (updatedToken) {
           localStorage.setItem("token", updatedToken);
           token = updatedToken; // Use the newly provided token
         } else {
-          console.warn("ElevenLabs API token not provided. Cannot start conversation.");
+          console.warn("Empower token not provided. Cannot start conversation.");
           return null; // Exit if no token
         }
       }

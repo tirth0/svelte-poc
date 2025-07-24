@@ -10,7 +10,7 @@
 		elevenlabsCall();
 
 	function inputToken(): void {
-		const updatedToken = prompt('Enter ElevenLabs API token:');
+		const updatedToken = prompt('Enter Empower API token:');
 		if (updatedToken) {
 			localStorage.setItem('token', updatedToken);
 			alert('Token updated! Please restart the call if already active.');
