@@ -53,14 +53,18 @@
 		<div class="title" onclick={() => (showOverview = !showOverview)}>
 			<div class="icon"></div>
 			<span>Live suggestions</span>
-			<span class="status" class:connected={socketConnected} class:disconnected={!socketConnected}>
-				{socketConnected ? 'Connected' : 'Disconnected'}
+			<span
+				class="status"
+				class:connected={$socketConnected}
+				class:disconnected={!$socketConnected}
+			>
+				{$socketConnected ? 'Connected' : 'Disconnected'}
 			</span>
 			<div class="arrow"></div>
 		</div>
 		<div class="content">
-			{#if typeof suggestions === 'array' && suggestions?.length > 0 && suggestions?.filter((s) => s !== 'NOT_NEEDED').length}
-				{#each typeof suggestions === 'array' && suggestions?.length > 0 && suggestions?.filter((s) => s !== 'NOT_NEEDED') as suggestion}
+			{#if typeof $suggestions === 'array' && $suggestions?.length > 0 && $suggestions?.filter((s) => s !== 'NOT_NEEDED').length}
+				{#each typeof $suggestions === 'array' && $suggestions?.length > 0 && $suggestions?.filter((s) => s !== 'NOT_NEEDED') as suggestion}
 					<div class="suggestion">{suggestion}</div>
 				{/each}
 			{:else}
