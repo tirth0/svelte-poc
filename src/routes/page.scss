@@ -1,0 +1,161 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  header {
+    padding: 16px;
+    background-color: #ffffff;
+
+    color: #394759;
+
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      background: var(--blue);
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  }
+
+  main {
+    padding: 12px;
+    height: calc(100% - 64px);
+    align-self: stretch;
+    background-color: #f9fbff;
+
+    display: flex;
+    gap: 12px;
+  }
+}
+
+:root {
+  --blue: #4e6ec1;
+  --black: #394759;
+  --border: #dfe5f3;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Inter-Regular.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Inter-Medium.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/Inter-SemiBold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Inter-Bold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Poppins-Regular.ttf") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue) rgba(78, 110, 193, 0.08);
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  padding: 0.5em 0.5em;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  color: var(--black);
+  margin: auto;
+  background-image: linear-gradient(
+    121.17deg,
+    rgba(203, 243, 224, 0.5) 0%,
+    rgba(227, 232, 244, 0.5) 0.01%,
+    rgba(128, 164, 254, 0.5) 100%
+  );
+}
+
+body > .bodyCircle1,
+body > .bodyCircle2 {
+  position: fixed;
+  z-index: -1;
+  overflow: hidden;
+  inset: 0 0 0 0;
+}
+
+body > .bodyCircle1:before,
+body > .bodyCircle2:before {
+  position: absolute;
+  top: -260px;
+  left: -260px;
+  width: 400px;
+  height: 400px;
+  content: "";
+  border: 150px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+body > .bodyCircle2:before {
+  inset: auto -260px -260px auto;
+}
+
+#app {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 3px 3px 50px rgba(0, 35, 35, 0.05);
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #f9fbff;
+}
+
+@media (max-height: 830px) {
+  #app {
+    padding: 10px;
+  }
+}

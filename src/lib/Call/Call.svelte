@@ -1,16 +1,18 @@
 <script lang="ts">
-	import User from './User.svelte';
+	import './style.scss';
+	import User from '../User/User.svelte';
+	import { get } from 'svelte/store';
 
 	// Props
-	export let callData;
-	export let startConversation;
-	export let stopConversation;
-	export let toggleMic;
+	const { callData, startConversation, stopConversation, toggleMic } = $props();
 
 	// Runes (Svelte 5 reactivity for stores)
 	const isMute = callData.isMute;
 	const isStarted = callData.isStarted;
 	const speakerId = callData.speakerId;
+	const time = $derived(callData.time);
+
+	console.log(time);
 
 	// Static user list
 	const users = [
@@ -46,26 +48,22 @@
 	{/each}
 
 	<div class="controls">
-		<p>{callData.time}</p>
+		<p>{$time}</p>
 
 		{#if $isStarted}
 			<div class="buttons">
 				<button
 					class="mic"
 					class:muted={$isMute}
-					on:click={toggleMic}
+					onclick={toggleMic}
 					aria-label={$isMute ? 'Unmute microphone' : 'Mute microphone'}
 				></button>
-				<button class="end" on:click={stopConversation} aria-label="End conversation"></button>
+				<button class="end" onclick={stopConversation} aria-label="End conversation"></button>
 			</div>
 		{:else}
 			<div class="buttons">
-				<button class="start" on:click={startConversation}> Start conversation </button>
+				<button class="start" onclick={startConversation}> Start conversation </button>
 			</div>
 		{/if}
 	</div>
 </div>
-
-<style scoped lang="scss">
-	@import './style.scss';
-</style>

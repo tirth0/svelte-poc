@@ -1,0 +1,156 @@
+.callInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: auto;
+  flex: 1;
+  .collapsible {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    &.open {
+      flex: 1;
+      .title .arrow {
+        transform: rotate(180deg);
+      }
+      .content {
+        display: flex;
+      }
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      .icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+      span {
+        flex: 1;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+      }
+      .status {
+        width: fit-content;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 18px;
+        padding: 4px 8px;
+        border: 1px solid;
+        border-radius: 12px;
+        flex-grow: 0;
+        &.connected {
+          color: #81c784;
+          border-color: #81c784;
+          background-color: #e6f9e6;
+        }
+        &.disconnected {
+          color: #f44336;
+          border-color: #f44336;
+          background-color: #ffebee;
+        }
+      }
+      .arrow {
+        width: 24px;
+        height: 24px;
+        background: url("/img/chevron-down-arrow.svg") no-repeat center / 16px;
+      }
+    }
+
+    &.overview .title .icon {
+      background: rgba(78, 110, 193, 0.08) url("/img/book.svg") no-repeat
+        center / 16px;
+    }
+
+    &.suggestion .title .icon {
+      background: rgba(78, 110, 193, 0.08) url("/img/ai-text.svg") no-repeat
+        center / 16px;
+    }
+
+    .content {
+      display: none;
+      margin-top: 20px;
+      flex-direction: column;
+      gap: 24px;
+      height: 100%;
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        .tag {
+          padding: 6px 10px;
+          border-radius: 12px;
+          background-color: rgba(78, 110, 193, 0.08);
+          color: var(--blue);
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 18px;
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        label {
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 21px;
+        }
+        p {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+      .tips {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          list-style: disc;
+          padding-left: 16px;
+          li {
+            font-size: 12px;
+            line-height: 18px;
+          }
+        }
+      }
+      .suggestion {
+        padding: 20px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .fallback {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 17px;
+        margin: auto;
+        width: 50%;
+        .icon {
+          width: 40px;
+          height: 40px;
+          flex-shrink: 0;
+          background: url("/img/ai-text2.svg") no-repeat center / contain;
+        }
+        p {
+          font-size: 14px;
+          line-height: 21px;
+          color: var(--grey4);
+          text-align: center;
+        }
+      }
+    }
+  }
+}
