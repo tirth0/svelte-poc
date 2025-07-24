@@ -25,7 +25,7 @@
 		},
 		{
 			id: '2',
-			name: 'Amarjeet Kumar',
+			name: 'Lionel Messy',
 			role: 'BDR, Sales FR',
 			img: '/img/user2.svg',
 			color: '#81c78414'
